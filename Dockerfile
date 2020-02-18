@@ -28,6 +28,7 @@ RUN adduser kevin --home /home/kevin --disabled-password
 
 # Copy binary on the last stage
 WORKDIR /home/kevin
+COPY --from=0 /go/src/github.com/perriea/app-dev/index.html .
 COPY --from=0 /go/src/github.com/perriea/app-dev/app-dev .
 
 # Assign kevin user
